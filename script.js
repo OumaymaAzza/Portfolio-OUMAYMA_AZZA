@@ -40,12 +40,24 @@ sr2.reveal('.section-title',{delay: 100})
 sr2.reveal('.apercu',{delay: 100})
 sr2.reveal('.skills-container',{delay: 100})
 
-const menuIcon = document.querySelector('#menu-icon');
-const navLinks = document.querySelector('.nav-links');
-menuIcon.onclick = () =>{
-    navLinks.classList.toggle('active')
 
-}
+const menuIcon = document.getElementById('menu-icon');
+const navLinks = document.querySelector('.nav-links');
+
+menuIcon.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+const menuItems = document.querySelectorAll('.nav-links a');
+
+menuItems.forEach(item => {
+  item.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {  
+      navLinks.classList.remove('active');
+    }
+  });
+});
+
 
 
  
