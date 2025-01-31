@@ -18,53 +18,6 @@ body {
     color: #fff;
 }
 
-.bgAnimation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(20, 1fr);
-    background: #1d1d1d;
-    filter: saturate(2);
-    overflow: hidden;
-    z-index: -1;
-}
-
-.colorBox {
-    z-index: 2;
-    filter: brightness(1.1);
-    transition: 2s ease;
-    position: relative;
-    margin: 2px;
-    background: #1d1d1d;
-
-}
-
-.backgroundAmin {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: #200579;
-    filter: blur(60px);
-    animation: animBack 6s linear infinite;
-}
-
-@keyframes animBack {
-    0% {
-        top: -60px;
-    }
-
-    100% {
-        top: 120%;
-    }
-
-}
-
 header {
     position: fixed;
     top: 1rem;
@@ -328,11 +281,6 @@ section {
     height: 450px;
 }
 
-.project-card:hover {
-    background-color: black;
-    color: white;
-    transform: translateY(-10px) scale(1.02);
-}
 
 .project-card img {
     width: 60%;
@@ -340,10 +288,7 @@ section {
     border-radius: 1rem;
 }
 
-.project-card:hover .btn {
-    border: 2px solid white;
-    color: white;
-}
+
 
 .contact {
     min-height: 100vh;
@@ -453,7 +398,7 @@ section {
 }
 
 footer {
-    background: linear-gradient(120deg, #200579, #4b1ce5);
+    background: linear-gradient(180deg, #200579, #0f0e0d);
     color: white;
     padding: 2rem 10%;
     text-align: center;
@@ -528,15 +473,7 @@ footer {
         font-size: 2.5rem;
     }
 
-    .projects-grid {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        padding: 2rem;
-    }
+ 
 
 }
 
@@ -653,15 +590,7 @@ footer {
 
     }
 
-    .projects-grid {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        padding: 2rem;
-    }
+   
 
     .contact-container {
         display: flex;
@@ -671,6 +600,8 @@ footer {
         z-index: 1;
         position: relative;
     }
+    
+    
 }
 
 @media (max-width: 600px) {
@@ -743,7 +674,7 @@ footer {
     }
 
     .nav-links.active {
-        display: block;
+        display: flex;
     }
 
     .a_propos-section .image {
@@ -778,3 +709,251 @@ footer {
     
 
 }
+.visuallyhidden {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  opacity: 0;
+  
+}
+
+h1 {
+  color: white;
+  text-align: center;
+
+}
+
+.container {
+  overflow: hidden;
+  padding: 20px;
+  margin-top: 2em;
+  
+}
+
+.card-carousel {
+    
+  --card-width: 100%;
+  --card-max-width: 300px;
+  --card-height: 400px;
+  --carousel-min-width: 800px;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: var(--card-height);
+  min-width: var(--carousel-min-width);
+  transition: filter .3s ease;
+}
+.visit-btn2 {
+    margin-top: 10px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 3rem;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, #200579, #0f0e0d);
+}
+
+.visit-btn2:hover {
+    background: linear-gradient(to right, #200579, #0f0e0d);
+    transform: scale(1.03);
+}
+@media screen and (max-width: 600px) {
+  .card-carousel {
+    margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+  }
+}
+
+.card-carousel.smooth-return {
+  transition: all .2s ease;
+}
+
+.card-carousel .card {
+  background: whitesmoke;
+  width: var(--card-width);
+  max-width: var(--card-max-width);
+  text-align: center;
+  padding: 1em;
+  min-width: 250px;
+  height: var(--card-height);
+  position: absolute;
+  margin: 0 auto;
+  color: rgba(0,0,0,.5);
+  transition: inherit;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+  border-radius: 1em;
+  filter: brightness(.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.highlight {
+  filter: brightness(1)
+}
+
+
+
+.image-container {
+  width: 8em;
+  height: 8em;
+  position: relative;
+  background-size: cover;
+  margin-bottom: 2em;
+  border-radius: 100%;
+  padding: 1em;
+  -webkit-box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
+-moz-box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
+box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
+  
+}
+
+.image-container::after {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 120%;
+  border: solid 3px rgba(0,0,0,.1);
+  border-radius: 100%;
+  position: absolute;
+  top: calc(-10% - 3px);
+  left: calc(-10% - 3px);
+}
+
+
+.card:nth-of-type(1) .image-container {
+    background-image: url("image/lebongout.jpg")
+  }
+.card:nth-of-type(2) .image-container {
+    background-image: url("image/ic_launcher_foreground.webp")
+  }
+
+.card:nth-of-type(3) .image-container {
+    background-image: url("image/contact-us.png")
+  }
+
+.card:nth-of-type(4) .image-container {
+    background-image: url("image/green.png")
+  }
+  .card:nth-of-type(5) .image-container {
+    background-image: url("image/panier-repas.png")
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .card-carousel {
+        transform: scale(0.85); 
+      
+    }
+    .card {
+        width: 90%;
+        max-width: 250px;
+        padding: 0.8em;
+    }
+
+    .image-container {
+        width: 5em;
+        height: 5em;
+    }
+    .container {
+        overflow: hidden;
+        padding: 5px;
+        margin-top: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+}
+
+@media screen and (max-width: 600px) {
+    .visit-btn2 {
+        width: 100%;
+        padding: 0.8em;
+        font-size: 1rem;
+    }
+
+    .container {
+        overflow: hidden;
+        margin-top: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+        padding: 0;
+    }
+
+    .card-carousel {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        transform: scale(0.75); 
+        margin: 0 auto;
+        width: fit-content; 
+    }
+
+    .card {
+        width: 80%; 
+        max-width: 250px;
+        padding: 0.8em;
+        margin: 0 auto; 
+    }
+
+    .image-container {
+        width: 5em;
+        height: 5em;
+    }
+}
+#particles1-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #0f0e0d, #200579);
+  }
+  
+  .a_propos {
+    position: relative;
+    z-index: 1;
+  }
+  
+  #particles2-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #200579, #0f0e0d);
+  }
+  
+  .competences {
+    position: relative;
+    z-index: 1;
+  }
+  
+  #particles3-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    
+    background: linear-gradient(180deg, #0f0e0d, #200579);
+  }
+  
+  .projects {
+    position: relative;
+    z-index: 1;
+  }
+  
